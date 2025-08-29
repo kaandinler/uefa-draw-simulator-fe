@@ -1,14 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import Home from './pages/Home';
 import DrawSimulator from './pages/DrawSimulator';
 import DrawHistory from './pages/DrawHistory';
 import { Competition } from './types';
 import { competitionsApi } from './services/api';
+import './i18n';
 import './App.css';
 
 function App() {
+  const { t } = useTranslation();
   const [competitions, setCompetitions] = useState<Competition[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -58,7 +61,7 @@ function App() {
     return (
       <div className="loading-container">
         <div className="loading-spinner"></div>
-        <p>Yükleniyor...</p>
+        <p>{t('common.loading')}</p>
       </div>
     );
   }

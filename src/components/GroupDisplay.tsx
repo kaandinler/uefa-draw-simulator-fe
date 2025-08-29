@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Group } from '../types';
 import './GroupDisplay.css';
 
@@ -7,6 +8,8 @@ interface GroupDisplayProps {
 }
 
 const GroupDisplay: React.FC<GroupDisplayProps> = ({ groups }) => {
+  const { t } = useTranslation();
+  
   const getGroupColor = (groupName: string) => {
     const colors = [
       '#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4',
@@ -18,7 +21,7 @@ const GroupDisplay: React.FC<GroupDisplayProps> = ({ groups }) => {
 
   return (
     <div className="group-display">
-      <h2 className="groups-title">Kura Sonuçları</h2>
+      <h2 className="groups-title">{t('groupDisplay.title')}</h2>
       <div className="groups-grid">
         {groups.map((group, index) => (
           <motion.div
@@ -31,7 +34,7 @@ const GroupDisplay: React.FC<GroupDisplayProps> = ({ groups }) => {
           >
             <div className="group-header">
               <h3 className="group-name">{group.name}</h3>
-              <div className="group-team-count">{group.teams.length} Takım</div>
+              <div className="group-team-count">{group.teams.length} {t('groupDisplay.teamCount')}</div>
             </div>
             
             <div className="group-teams">

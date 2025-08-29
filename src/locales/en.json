@@ -1,0 +1,98 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "teams": "Teams",
+    "groups": "Groups",
+    "competition": "Competition",
+    "draw": "Draw",
+    "history": "History",
+    "home": "Home"
+  },
+  "header": {
+    "title": "UEFA Draw Simulator",
+    "home": "Home",
+    "history": "History"
+  },
+  "home": {
+    "hero": {
+      "title": "UEFA Draw Simulator",
+      "subtitle": "Perform draws for Europe's most prestigious club tournaments"
+    },
+    "features": {
+      "title": "Features",
+      "realisticDraw": {
+        "title": "Realistic Draw",
+        "description": "UEFA rules-compliant draw algorithm"
+      },
+      "groupManagement": {
+        "title": "Group Management",
+        "description": "Automatic group creation and restriction control"
+      },
+      "historyTracking": {
+        "title": "History Tracking",
+        "description": "View and compare previous draw results"
+      }
+    }
+  },
+  "competitions": {
+    "championsLeague": {
+      "name": "UEFA Champions League",
+      "description": "Europe's most prestigious club tournament"
+    },
+    "europaLeague": {
+      "name": "UEFA Europa League",
+      "description": "Europe's second-tier club tournament"
+    },
+    "conferenceLeague": {
+      "name": "UEFA Conference League",
+      "description": "Europe's third-tier club tournament"
+    }
+  },
+  "drawSimulator": {
+    "title": "Draw Simulator",
+    "seedTeams": "Seeded Teams",
+    "unseedTeams": "Unseeded Teams",
+    "drawButton": "Perform Draw",
+    "drawing": "Drawing...",
+    "newDraw": "New Draw",
+    "results": "Draw Results",
+    "loadingTeams": "Loading teams...",
+    "errorLoadingData": "Error loading data",
+    "errorPerformingDraw": "Error performing draw"
+  },
+  "teamCard": {
+    "seed": "Seeded",
+    "unseed": "Unseeded",
+    "coefficient": "Coefficient"
+  },
+  "groupDisplay": {
+    "title": "Draw Results",
+    "teamCount": "Teams"
+  },
+  "drawHistory": {
+    "title": "Draw History",
+    "subtitle": "View and compare previous draw results",
+    "allCompetitions": "All Competitions",
+    "noDrawsYet": "No draws performed yet",
+    "noDrawsDescription": "Go to home page to perform your first draw",
+    "loadingHistory": "Loading history...",
+    "errorLoadingHistory": "Error loading history",
+    "drawDate": "Draw Date",
+    "groupCount": "Groups",
+    "teamCount": "Teams"
+  },
+  "language": {
+    "tr": "Türkçe",
+    "en": "English"
+  }
+}
