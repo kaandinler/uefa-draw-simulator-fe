@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shuffle, Play, RotateCcw, ArrowLeft, Users, Trophy } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Team, DrawResult, Competition } from '../types';
 import { teamsApi, drawApi, competitionsApi } from '../services/api';
 import TeamCard from '../components/TeamCard';
@@ -11,6 +12,7 @@ import './DrawSimulator.css';
 const DrawSimulator: React.FC = () => {
   const { competitionId } = useParams<{ competitionId: string }>();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   const [competition, setCompetition] = useState<Competition | null>(null);
   const [seedTeams, setSeedTeams] = useState<Team[]>([]);
@@ -37,7 +39,7 @@ const DrawSimulator: React.FC = () => {
         setUnseedTeams(unseedData);
       } catch (err) {
         console.error('Veri yüklenirken hata:', err);
-        setError('Veriler yüklenirken bir hata oluştu');
+        setError(t('drawSimulator.errorLoadingData'));
         
         // Fallback data for development
         setCompetition({
@@ -84,7 +86,7 @@ const DrawSimulator: React.FC = () => {
       setDrawResult(result);
     } catch (err) {
       console.error('Kura çekimi sırasında hata:', err);
-      setError('Kura çekimi sırasında bir hata oluştu');
+      setError(t('drawSimulator.errorPerformingDraw'));
     } finally {
       setIsDrawing(false);
     }
@@ -99,7 +101,7 @@ const DrawSimulator: React.FC = () => {
     return (
       <div className="loading-container">
         <div className="loading-spinner"></div>
-        <p>Takımlar yükleniyor...</p>
+        <p>{t('drawSimulator.loadingTeams')}</p>
       </div>
     );
   }
@@ -118,7 +120,7 @@ const DrawSimulator: React.FC = () => {
       <div className="draw-header">
         <button className="back-button" onClick={() => navigate('/')}>
           <ArrowLeft size={20} />
-          Geri Dön
+          {t('common.back')}
         </button>
         <div className="competition-info">
           <Trophy className="competition-icon" />
@@ -133,7 +135,7 @@ const DrawSimulator: React.FC = () => {
             <div className="team-group">
               <h3>
                 <Users size={20} />
-                Seri Başı Takımlar ({seedTeams.length})
+                {t('drawSimulator.seedTeams')} ({seedTeams.length})
               </h3>
               <div className="teams-grid">
                 {seedTeams.map((team) => (
@@ -145,7 +147,7 @@ const DrawSimulator: React.FC = () => {
             <div className="team-group">
               <h3>
                 <Users size={20} />
-                Seri Başı Olmayan Takımlar ({unseedTeams.length})
+                {t('drawSimulator.unseedTeams')} ({unseedTeams.length})
               </h3>
               <div className="teams-grid">
                 {unseedTeams.map((team) => (
@@ -174,12 +176,12 @@ const DrawSimulator: React.FC = () => {
                   {isDrawing ? (
                     <>
                       <div className="spinner"></div>
-                      Kura Çekiliyor...
+                      {t('drawSimulator.drawing')}
                     </>
                   ) : (
                     <>
                       <Shuffle size={24} />
-                      Kura Çek
+                      {t('drawSimulator.drawButton')}
                     </>
                   )}
                 </button>
@@ -194,7 +196,7 @@ const DrawSimulator: React.FC = () => {
               >
                 <button className="reset-button" onClick={resetDraw}>
                   <RotateCcw size={20} />
-                  Yeni Kura
+                  {t('drawSimulator.newDraw')}
                 </button>
               </motion.div>
             )}

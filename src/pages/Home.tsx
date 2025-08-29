@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Trophy, Users, Target } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Competition } from '../types';
 import './Home.css';
 
@@ -8,6 +9,8 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ competitions }) => {
+  const { t } = useTranslation();
+
   const getCompetitionIcon = (id: string) => {
     switch (id) {
       case 'champions-league':
@@ -37,8 +40,8 @@ const Home: React.FC<HomeProps> = ({ competitions }) => {
   return (
     <div className="home">
       <div className="hero">
-        <h1>UEFA Kura Çekimi Simülatörü</h1>
-        <p>Avrupa'nın en prestijli kulüp turnuvaları için kura çekimi yapın</p>
+        <h1>{t('home.hero.title')}</h1>
+        <p>{t('home.hero.subtitle')}</p>
       </div>
 
       <div className="competitions-grid">
@@ -57,11 +60,11 @@ const Home: React.FC<HomeProps> = ({ competitions }) => {
             <div className="competition-stats">
               <div className="stat">
                 <Users size={16} />
-                <span>{competition.totalTeams} Takım</span>
+                <span>{competition.totalTeams} {t('common.teams')}</span>
               </div>
               <div className="stat">
                 <Target size={16} />
-                <span>{competition.groupCount} Grup</span>
+                <span>{competition.groupCount} {t('common.groups')}</span>
               </div>
             </div>
             <div className="card-arrow">→</div>
@@ -70,22 +73,22 @@ const Home: React.FC<HomeProps> = ({ competitions }) => {
       </div>
 
       <div className="features">
-        <h2>Özellikler</h2>
+        <h2>{t('home.features.title')}</h2>
         <div className="features-grid">
           <div className="feature">
             <Trophy className="feature-icon" />
-            <h3>Gerçekçi Kura</h3>
-            <p>UEFA kurallarına uygun kura çekimi algoritması</p>
+            <h3>{t('home.features.realisticDraw.title')}</h3>
+            <p>{t('home.features.realisticDraw.description')}</p>
           </div>
           <div className="feature">
             <Users className="feature-icon" />
-            <h3>Grup Yönetimi</h3>
-            <p>Otomatik grup oluşturma ve kısıtlama kontrolü</p>
+            <h3>{t('home.features.groupManagement.title')}</h3>
+            <p>{t('home.features.groupManagement.description')}</p>
           </div>
           <div className="feature">
             <Target className="feature-icon" />
-            <h3>Geçmiş Takip</h3>
-            <p>Önceki kura çekimlerini görüntüleme ve karşılaştırma</p>
+            <h3>{t('home.features.historyTracking.title')}</h3>
+            <p>{t('home.features.historyTracking.description')}</p>
           </div>
         </div>
       </div>

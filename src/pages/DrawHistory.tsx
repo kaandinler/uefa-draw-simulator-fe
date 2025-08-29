@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, Filter } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { DrawResult, CompetitionType } from '../types';
 import { drawApi, competitionsApi } from '../services/api';
 import GroupDisplay from '../components/GroupDisplay';
 import './DrawHistory.css';
 
 const DrawHistory: React.FC = () => {
+  const { t } = useTranslation();
   const [drawHistory, setDrawHistory] = useState<DrawResult[]>([]);
   const [competitions, setCompetitions] = useState<{ id: CompetitionType; name: string }[]>([]);
   const [selectedCompetition, setSelectedCompetition] = useState<string>('all');
@@ -26,7 +28,7 @@ const DrawHistory: React.FC = () => {
         setCompetitions(compsData);
       } catch (err) {
         console.error('Geçmiş yüklenirken hata:', err);
-        setError('Geçmiş yüklenirken bir hata oluştu');
+        setError(t('drawHistory.errorLoadingHistory'));
         
         // Fallback data for development
         setDrawHistory([
@@ -96,7 +98,7 @@ const DrawHistory: React.FC = () => {
     return (
       <div className="loading-container">
         <div className="loading-spinner"></div>
-        <p>Geçmiş yükleniyor...</p>
+        <p>{t('drawHistory.loadingHistory')}</p>
       </div>
     );
   }
@@ -113,8 +115,8 @@ const DrawHistory: React.FC = () => {
   return (
     <div className="draw-history">
       <div className="history-header">
-        <h1>Kura Geçmişi</h1>
-        <p>Önceki kura çekimlerini görüntüleyin ve karşılaştırın</p>
+        <h1>{t('drawHistory.title')}</h1>
+        <p>{t('drawHistory.subtitle')}</p>
       </div>
 
       <div className="history-filters">
@@ -125,7 +127,7 @@ const DrawHistory: React.FC = () => {
             onChange={(e) => setSelectedCompetition(e.target.value)}
             className="competition-filter"
           >
-            <option value="all">Tüm Yarışmalar</option>
+            <option value="all">{t('drawHistory.allCompetitions')}</option>
             {competitions.map((comp) => (
               <option key={comp.id} value={comp.id}>
                 {comp.name}
@@ -138,8 +140,8 @@ const DrawHistory: React.FC = () => {
       {filteredHistory.length === 0 ? (
         <div className="empty-state">
           <Calendar size={64} />
-          <h3>Henüz kura çekimi yapılmamış</h3>
-          <p>İlk kura çekimini yapmak için ana sayfaya dönün</p>
+          <h3>{t('drawHistory.noDrawsYet')}</h3>
+          <p>{t('drawHistory.noDrawsDescription')}</p>
         </div>
       ) : (
         <div className="history-list">
@@ -160,8 +162,8 @@ const DrawHistory: React.FC = () => {
                   </div>
                 </div>
                 <div className="draw-stats">
-                  <span>{draw.groups.length} Grup</span>
-                  <span>{draw.groups.reduce((total, group) => total + group.teams.length, 0)} Takım</span>
+                  <span>{draw.groups.length} {t('drawHistory.groupCount')}</span>
+                  <span>{draw.groups.reduce((total, group) => total + group.teams.length, 0)} {t('drawHistory.teamCount')}</span>
                 </div>
               </div>
               

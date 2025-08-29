@@ -1,145 +1,86 @@
-# UEFA Kura Çekimi Simülatörü
+# Extensive React Boilerplate
 
-UEFA Şampiyonlar Ligi, UEFA Avrupa Ligi ve UEFA Konferans Ligi için modern bir kura çekimi simülatörü uygulaması.
+[![image](https://github.com/brocoders/extensive-react-boilerplate/assets/72293912/052e74be-7de0-4a4a-92a6-e6a4b68fd4b5)](https://github.com/new?template_name=extensive-react-boilerplate&template_owner=brocoders)
 
-## 🏆 Özellikler
+**Belongs to the [bc boilerplates](https://bcboilerplates.com/) ecosystem**
 
-- **Üç UEFA Turnuvası Desteği**: Şampiyonlar Ligi, Avrupa Ligi ve Konferans Ligi
-- **Gerçekçi Kura Algoritması**: UEFA kurallarına uygun kura çekimi
-- **Modern UI/UX**: Responsive tasarım ve animasyonlar
-- **Grup Yönetimi**: Otomatik grup oluşturma ve kısıtlama kontrolü
-- **Geçmiş Takibi**: Önceki kura çekimlerini görüntüleme
-- **Backend Entegrasyonu**: RESTful API ile veri yönetimi
+## Table of Contents <!-- omit in toc -->
 
-## 🚀 Teknolojiler
+- [Extensive React Boilerplate](#extensive-react-boilerplate)
+  - [Description](#description)
+  - [Getting Started](#getting-started)
+  - [Features](#features)
+  - [Screenshots](#screenshots)
+  - [Contributors](#contributors)
+  - [Support](#support)
 
-- **Frontend**: React 18, TypeScript, Vite
-- **UI Kütüphaneleri**: Framer Motion, Lucide React
-- **HTTP Client**: Axios
-- **Routing**: React Router DOM
-- **Styling**: CSS3, Flexbox, Grid
+## Description
 
-## 📦 Kurulum
+ReactJS Boilerplate for a typical project.
 
-1. Projeyi klonlayın:
+[Full documentation here](/docs/README.md)
+
+Demo: <https://react-boilerplate-coral.vercel.app>
+
+Backend: <https://github.com/brocoders/nestjs-boilerplate>
+
+## Getting Started
+
+First, run the development server:
+
 ```bash
-git clone <repository-url>
-cd uefa-draw-simulator-fe
-```
+cp example.env.local .env.local
 
-2. Bağımlılıkları yükleyin:
-```bash
-npm install
-```
-
-3. Environment dosyasını oluşturun:
-```bash
-cp .env.example .env
-```
-
-4. Backend API URL'sini ayarlayın:
-```env
-VITE_API_BASE_URL=http://localhost:8080/api
-```
-
-5. Geliştirme sunucusunu başlatın:
-```bash
 npm run dev
 ```
 
-## 🔧 Geliştirme
+## Features
 
-### Mevcut Scriptler
+- [x] Next.js
+- [x] TypeScript
+- [x] [i18n](https://react.i18next.com/) (based on https://github.com/i18next/next-13-app-dir-i18next-example)
+- [x] [Material UI](https://mui.com/). Supports dark mode.
+- [x] [React Hook Form](https://react-hook-form.com/)
+- [x] React Query
+- [x] Auth (Sign in, Sign up, Reset password, Confirm email, Refresh Token)
+- [x] User management (CRUD)
+- [x] File Upload
+- [x] E2E tests ([Playwright](https://playwright.dev/))
+- [x] ESLint
+- [x] CI (GitHub Actions)
 
-- `npm run dev` - Geliştirme sunucusunu başlatır
-- `npm run build` - Production build oluşturur
-- `npm run preview` - Production build'i önizler
-- `npm run lint` - ESLint ile kod kontrolü
+## Screenshots
 
-### Proje Yapısı
+<img width="1552" alt="Sign In" src="https://github.com/brocoders/extensive-react-boilerplate/assets/6001723/5d42cd15-685b-4ae7-951d-4c8ed89c5390">
 
-```
-src/
-├── components/          # Yeniden kullanılabilir bileşenler
-│   ├── Header.tsx      # Ana navigasyon
-│   ├── TeamCard.tsx    # Takım kartı
-│   └── GroupDisplay.tsx # Grup görüntüleme
-├── pages/              # Sayfa bileşenleri
-│   ├── Home.tsx        # Ana sayfa
-│   ├── DrawSimulator.tsx # Kura simülatörü
-│   └── DrawHistory.tsx # Geçmiş sayfası
-├── services/           # API servisleri
-│   └── api.ts         # HTTP istekleri
-├── types/              # TypeScript tip tanımları
-│   └── index.ts       # Ana tip tanımları
-└── App.tsx            # Ana uygulama bileşeni
-```
+<img width="1552" alt="Sign Up" src="https://github.com/brocoders/extensive-react-boilerplate/assets/6001723/aca2d405-2155-4755-8d0e-d41bdc0db852">
 
-## 🌐 API Endpoints
+<img width="1552" alt="Users list" src="https://github.com/brocoders/extensive-react-boilerplate/assets/6001723/244409c0-2235-4018-b062-44fb54ea4321">
 
-Uygulama aşağıdaki backend API endpoint'lerini bekler:
+<img width="1552" alt="Create user" src="https://github.com/brocoders/extensive-react-boilerplate/assets/6001723/cb86a3e1-331f-4bd7-9668-3c6cf44eb372">
 
-### Yarışmalar
-- `GET /api/competitions` - Tüm yarışmaları listele
-- `GET /api/competitions/:id` - Belirli yarışmayı getir
+## Contributors
 
-### Takımlar
-- `GET /api/teams/competition/:id` - Yarışma takımlarını getir
-- `GET /api/teams/competition/:id/seeds` - Seri başı takımları getir
-- `GET /api/teams/competition/:id/unseeds` - Seri başı olmayan takımları getir
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Shchepotin"><img src="https://avatars.githubusercontent.com/u/6001723?v=4?s=100" width="100px;" alt="Vladyslav Shchepotin"/><br /><sub><b>Vladyslav Shchepotin</b></sub></a><br /><a href="#maintenance-Shchepotin" title="Maintenance">🚧</a> <a href="#doc-Shchepotin" title="Documentation">📖</a> <a href="#code-Shchepotin" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ElenVlass"><img src="https://avatars.githubusercontent.com/u/72293912?v=4?s=100" width="100px;" alt="Elena Vlasenko"/><br /><sub><b>Elena Vlasenko</b></sub></a><br /><a href="#doc-ElenVlass" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/TetianaFomina"><img src="https://avatars.githubusercontent.com/u/72749258?v=4?s=100" width="100px;" alt="TetianaFomina"/><br /><sub><b>TetianaFomina</b></sub></a><br /><a href="#test-TetianaFomina" title="Tests">⚠️</a> <a href="#bug-TetianaFomina" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/LiudmylaKostenko"><img src="https://avatars.githubusercontent.com/u/55603883?v=4?s=100" width="100px;" alt="Liudmyla Kostenko"/><br /><sub><b>Liudmyla Kostenko</b></sub></a><br /><a href="#code-LiudmylaKostenko" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://brocoders.com"><img src="https://avatars.githubusercontent.com/u/226194?v=4?s=100" width="100px;" alt="Rodion"/><br /><sub><b>Rodion</b></sub></a><br /><a href="#business-sars" title="Business development">💼</a></td>
+    </tr>
+  </tbody>
+</table>
 
-### Kura Çekimi
-- `POST /api/draw` - Yeni kura çekimi yap
-- `GET /api/draw/history` - Kura geçmişini getir
-- `GET /api/draw/:id` - Belirli kura sonucunu getir
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
-## 🎨 Tasarım Özellikleri
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
-- **Responsive Design**: Mobil ve masaüstü uyumlu
-- **Dark Theme**: Modern koyu tema
-- **Animasyonlar**: Framer Motion ile akıcı geçişler
-- **Glassmorphism**: Modern cam efekti tasarım
-- **Gradient Backgrounds**: UEFA renklerini yansıtan gradyanlar
+## Support
 
-## 📱 Responsive Breakpoints
-
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
-
-## 🔒 Güvenlik
-
-- CORS desteği
-- API key yönetimi (gerekirse)
-- Input validation
-- Error handling
-
-## 🚀 Deployment
-
-### Vercel
-```bash
-npm run build
-vercel --prod
-```
-
-### Netlify
-```bash
-npm run build
-netlify deploy --prod --dir=dist
-```
-
-## 🤝 Katkıda Bulunma
-
-1. Fork yapın
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Commit yapın (`git commit -m 'Add amazing feature'`)
-4. Push yapın (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
-
-## 📄 Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır.
-
-## 📞 İletişim
-
-Proje hakkında sorularınız için issue açabilirsiniz.
+If you seek consulting, support, or wish to collaborate, please get in touch with us via [boilerplates@brocoders.com](boilerplates@brocoders.com) or feel free to ask us on [GitHub Discussions](https://github.com/brocoders/extensive-react-boilerplate/discussions). We are totally open to any suggestions and improvements.

@@ -1,0 +1,98 @@
+{
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "retry": "Tekrar Dene",
+    "back": "Geri Dön",
+    "next": "İleri",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "close": "Kapat",
+    "search": "Ara",
+    "filter": "Filtrele",
+    "all": "Tümü",
+    "teams": "Takımlar",
+    "groups": "Gruplar",
+    "competition": "Yarışma",
+    "draw": "Kura",
+    "history": "Geçmiş",
+    "home": "Ana Sayfa"
+  },
+  "header": {
+    "title": "UEFA Kura Simülatörü",
+    "home": "Ana Sayfa",
+    "history": "Geçmiş"
+  },
+  "home": {
+    "hero": {
+      "title": "UEFA Kura Çekimi Simülatörü",
+      "subtitle": "Avrupa'nın en prestijli kulüp turnuvaları için kura çekimi yapın"
+    },
+    "features": {
+      "title": "Özellikler",
+      "realisticDraw": {
+        "title": "Gerçekçi Kura",
+        "description": "UEFA kurallarına uygun kura çekimi algoritması"
+      },
+      "groupManagement": {
+        "title": "Grup Yönetimi",
+        "description": "Otomatik grup oluşturma ve kısıtlama kontrolü"
+      },
+      "historyTracking": {
+        "title": "Geçmiş Takip",
+        "description": "Önceki kura çekimlerini görüntüleme ve karşılaştırma"
+      }
+    }
+  },
+  "competitions": {
+    "championsLeague": {
+      "name": "UEFA Şampiyonlar Ligi",
+      "description": "Avrupa'nın en prestijli kulüp turnuvası"
+    },
+    "europaLeague": {
+      "name": "UEFA Avrupa Ligi",
+      "description": "Avrupa'nın ikinci seviye kulüp turnuvası"
+    },
+    "conferenceLeague": {
+      "name": "UEFA Konferans Ligi",
+      "description": "Avrupa'nın üçüncü seviye kulüp turnuvası"
+    }
+  },
+  "drawSimulator": {
+    "title": "Kura Çekimi Simülatörü",
+    "seedTeams": "Seri Başı Takımlar",
+    "unseedTeams": "Seri Başı Olmayan Takımlar",
+    "drawButton": "Kura Çek",
+    "drawing": "Kura Çekiliyor...",
+    "newDraw": "Yeni Kura",
+    "results": "Kura Sonuçları",
+    "loadingTeams": "Takımlar yükleniyor...",
+    "errorLoadingData": "Veriler yüklenirken bir hata oluştu",
+    "errorPerformingDraw": "Kura çekimi sırasında bir hata oluştu"
+  },
+  "teamCard": {
+    "seed": "Seri Başı",
+    "unseed": "Seri Başı Değil",
+    "coefficient": "Katsayı"
+  },
+  "groupDisplay": {
+    "title": "Kura Sonuçları",
+    "teamCount": "Takım"
+  },
+  "drawHistory": {
+    "title": "Kura Geçmişi",
+    "subtitle": "Önceki kura çekimlerini görüntüleyin ve karşılaştırın",
+    "allCompetitions": "Tüm Yarışmalar",
+    "noDrawsYet": "Henüz kura çekimi yapılmamış",
+    "noDrawsDescription": "İlk kura çekimini yapmak için ana sayfaya dönün",
+    "loadingHistory": "Geçmiş yükleniyor...",
+    "errorLoadingHistory": "Geçmiş yüklenirken bir hata oluştu",
+    "drawDate": "Kura Tarihi",
+    "groupCount": "Grup",
+    "teamCount": "Takım"
+  },
+  "language": {
+    "tr": "Türkçe",
+    "en": "English"
+  }
+}

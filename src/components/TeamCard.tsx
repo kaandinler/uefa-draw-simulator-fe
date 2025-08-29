@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Team } from '../types';
 import './TeamCard.css';
 
@@ -8,6 +9,8 @@ interface TeamCardProps {
 }
 
 const TeamCard: React.FC<TeamCardProps> = ({ team, type }) => {
+  const { t } = useTranslation();
+  
   return (
     <motion.div
       className={`team-card ${type}`}
@@ -31,12 +34,12 @@ const TeamCard: React.FC<TeamCardProps> = ({ team, type }) => {
         <p className="team-country">{team.country}</p>
         <p className="team-league">{team.league}</p>
         <div className="team-coefficient">
-          <span>Katsayı: {team.coefficient}</span>
+          <span>{t('teamCard.coefficient')}: {team.coefficient}</span>
         </div>
       </div>
       
       <div className="team-type-badge">
-        {type === 'seed' ? 'Seri Başı' : 'Seri Başı Değil'}
+        {type === 'seed' ? t('teamCard.seed') : t('teamCard.unseed')}
       </div>
     </motion.div>
   );
