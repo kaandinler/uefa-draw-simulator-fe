@@ -1,0 +1,132 @@
+.team-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.team-card.seed {
+  border-color: #ffd700;
+}
+
+.team-card.unseed {
+  border-color: #4ecdc4;
+}
+
+.team-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.team-logo {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.team-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.team-logo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ffd700, #ff6b35);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.team-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.team-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-country {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 0.25rem 0;
+}
+
+.team-league {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 0.5rem 0;
+}
+
+.team-coefficient {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.team-type-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.team-card.seed .team-type-badge {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+}
+
+.team-card.unseed .team-type-badge {
+  background: rgba(78, 205, 196, 0.2);
+  color: #4ecdc4;
+}
+
+@media (max-width: 768px) {
+  .team-card {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .team-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .team-name {
+    font-size: 0.9rem;
+  }
+
+  .team-country,
+  .team-league {
+    font-size: 0.75rem;
+  }
+
+  .team-coefficient {
+    font-size: 0.7rem;
+  }
+}
